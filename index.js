@@ -189,6 +189,7 @@ elemanlara denk gelecek şekilde, iki diziyi birleştirip sonucu manav dizisine 
 var manav = meyveler.concat(sebzeler);
 
 console.log("Manav: ", manav);
+
 /* 	GÖREV 4:
 		Yeni kurulmuş bir mesajlaşma startup firması atılan mesajları emojilerle zenginleştirmek istiyor. 
     Bunun için emojiler adında bir nesne tanımlamışlar. Kullanıcının gönderdiği mesaj stringi içinde 
@@ -206,9 +207,19 @@ console.log("Manav: ", manav);
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */) {
-  /* kodlar buraya */
+function emojileriDonustur(str, obj) {
+  const newStr = str.toLowerCase();
+
+  for (const objKey in obj) {
+    var objVal = obj[objKey];
+    if (newStr.includes(objKey)) {
+      newStr.replace(objKey, objVal);
+    }
+  }
+  return str;
 }
+
+console.log(emojileriDonustur(":D asfasf ", emojiler));
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
