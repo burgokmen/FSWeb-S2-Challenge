@@ -208,6 +208,26 @@ console.log("Manav: ", manav);
  */
 
 function emojileriDonustur(str, obj) {
+  let objVal;
+
+  for (const objKey in obj) {
+    objVal = obj[objKey];
+
+    if (str.includes(objKey.toLowerCase())) {
+      str = str.replaceAll(objKey.toLowerCase(), objVal);
+    }
+
+    if (str.includes(objKey.toUpperCase())) {
+      str = str.replaceAll(objKey.toUpperCase(), objVal);
+    }
+  }
+  return str;
+}
+
+console.log(emojileriDonustur("burasi :) :( ), <3 ", emojiler));
+
+/*
+
   for (let objKey in obj) {
     const objVal = obj[objKey];
     const kucukobjKey = objKey.toLowerCase();
@@ -218,28 +238,9 @@ function emojileriDonustur(str, obj) {
   }
 
   return str;
-}
 
-/*
- var objKey;
 
-  var objVal;
 
-  for (const objKey in obj) {
-    objVal = obj[objKey];
-
-    if (str.includes(objKey.toLowerCase())) {
-      const newStr2 = str.replace(objKey.toLowerCase(), objVal);
-      return newStr2;
-    } else if (str.includes(objKey.toUpperCase())) {
-      const newStr2 = str.replace(objKey.toUpperCase(), objVal);
-
-      return newStr2;
-    }
-  }
-*/
-
-console.log(emojileriDonustur("burasi , <3 ", emojiler));
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
